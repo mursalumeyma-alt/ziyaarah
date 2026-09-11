@@ -1,3 +1,160 @@
+import makkahImage from "../../assets/makkah.png";
+
 export default function Home() {
-  return <h1>Welcome to Home Page</h1>;
+  return (
+    <main className="home-page">
+      {/* Hero section*/  }
+      <section className="hero">
+        <div className="hero-content">
+          <span className="hero-badge">
+             ✦ Trusted by 10,000+ Pilgrims
+
+          </span>
+
+          <h1> 
+           Begin Your Sacred Journey{" "}
+          <span>With Faith and Preparation</span> 
+          </h1>
+
+          <p>Prepare for your Hajj or Umrah journey with confidence.
+            Ziyaarah brings your spiritual preparation, journey planning,
+            and essential resources together in one place.</p>
+        <div className="hero-buttons">
+         <button
+  className="btn btn-primary"
+  onClick={() => alert("Welcome to the Ziyaarah community!")}
+>
+  Join Our Community
+</button>
+
+          <button className="btn btn-secondary"> Watch Demo</button>
+        </div>
+        </div>
+
+        <div className="hero-image">
+        <img src={makkahImage} alt="Kaaba in Makkah" />
+        {/* Journey Complete card */}
+        <div className="journey-card">
+            <span>✓</span>
+
+          
+<div>
+          <strong>Journey Complete</strong>
+          <small>Your trip progress</small>
+          </div>
+          </div>
+        
+         {/* Sacred Journey card */}
+        <div className="sacred-card">
+          <span>✦</span>
+        
+        <div>
+        <strong>Sacred Journey</strong>
+        <small>Plan with confidence</small>
+      
+      </div>
+      </div>
+      
+  </div>
+      
+      </section>
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="features-header">
+          <h2>Everything You Need for Your Sacred Journey</h2>
+          <p>Comprehensive tools and resources to help you prepare spiritually
+ and practically.</p>
+        </div>
+        <div className="features-grid">
+          <div className="feature-card">
+            
+              {/* Feature icon would go here */}
+            
+   <div className="feature-icon blue-icon">▣</div>
+              <h3>Trip Planning</h3>
+              <p>Organize your journey with detailed stage-by-stage planning and
+        comprehensive checklists.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon green-icon">✓</div>
+              <h3>Ritual Tracker</h3>
+              <p> Track mandatory and sunnah rituals with guided completion checklists
+        and reminders.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon yellow-icon">▤</div>
+              <h3>Learning Resources</h3>
+              <p>Access authentic Islamic resources and educational materials for each
+        journey stage.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon orange-icon">♧</div>
+
+              <h3>Personal Dashboard</h3>
+              <p> Monitor your progress with detailed insights and daily spiritual
+        inspiration.</p>
+            </div>
+          </div>
+      
+      </section>
+      {/* Journey Section */}
+      <section className="journey-section">
+        <div className="journey-header">
+          <h2>Choose Your Sacred Journey</h2>
+          <p>Tailored planning for both Hajj and Umrah pilgrimages.</p>
+        </div>
+
+        <div className="journey-cards">
+          <button className="journy-arrow">‹</button>
+          
+          <div className="journey-option">
+          <img
+  src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/NMH46HRRMRKDJJKVNBABBLFE7Q.jpg"
+  alt="Hajj Pilgrimage"
+/>
+
+            <div className="journey-info">
+              <h3>Hajj Pilgrimage</h3>
+              <p>The greater pilgrimage - a once-in-a-lifetime spiritual journey.</p>
+              <small>◷5-7 days comprehensive planning</small>
+            </div>
+          </div>
+
+          <div className="journey-option">
+           <img
+  src="https://th.bing.com/th/id/OIP.hTHQji3nrY86vlPAUFE50wHaEK?w=474&h=266&r=0&pid=CanonicalCanvas"
+  alt="Umrah Pilgrimage"
+/>
+
+            <div className="journey-info">
+              <h3>Umrah Pilgrimage</h3>
+              <p>The lesser pilgrimage - can be performed any time of year.</p>
+              <small>◷5-7 days flexible planning</small>
+            </div>
+            
+
+          </div>
+          <button className="journy-arrow">›</button>
+        </div>
+      </section>
+{/* CTA Section */}
+<section className="cta-section">
+  <div className="cta-content">
+  <div className="cta-text">
+      <h2>Ready to Begin Your Spiritual Journey?</h2>
+      <p>Join thousands of Muslims who have prepared for their sacred
+        journey with Ziyaarah. Start planning your Hajj or Umrah today
+        with our comprehensive tools and guidance.</p>
+        <button className="cta-button"> Create Your Account →</button>
+    </div>
+    <div className="cta-image">
+     <img
+  src="https://i.pinimg.com/originals/a5/78/be/a578be64b01c05760496f862a966faa0.jpg"
+  alt="Makkah"
+/>
+    </div>
+  </div>
+</section>
+    </main>
+  );
 }
