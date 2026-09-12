@@ -1,11 +1,42 @@
 
 import  Input from "../common/Input";
 import Button from "../common/Button";
+import { useState } from "react";
 
 function Register() {
-   const handleSubmit = (e) => {
-  e.preventDefault();
-  alert("Registration submitted!");
+    const [error, setError] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        const form = e.target;
+        const fullName = form.fullName.value.trim();
+        const email = form.email.value.trim();
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+
+      
+
+   
+    if (!fullName || !email || !password || !confirmPassword) {
+      setError("Please fill in all fields.");
+      return;
+    }
+ if (!email.includes("@")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+        setError("");
+        alert("Registration submitted!");
   window.location.href = "/";
 };
 
@@ -25,6 +56,12 @@ function Register() {
 
 
                 <form onSubmit={handleSubmit}>
+                      {error && (
+            <p className="login-error">
+              {error}
+            </p>
+          )}
+
                     <Input
                         label="Full Name"
                         placeholder="Enter your full name"

@@ -1,5 +1,6 @@
 import makkahImage from "../../assets/makkah.png";
-
+import makkahCityImage from "../../assets/makkah-city.png";
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <main className="home-page">
@@ -145,11 +146,13 @@ export default function Home() {
       <p>Join thousands of Muslims who have prepared for their sacred
         journey with Ziyaarah. Start planning your Hajj or Umrah today
         with our comprehensive tools and guidance.</p>
-        <button className="cta-button"> Create Your Account →</button>
+       <Link to="/register" className="cta-button">
+  Create Your Account →
+</Link>
     </div>
     <div className="cta-image">
-     <img
-  src="https://i.pinimg.com/originals/a5/78/be/a578be64b01c05760496f862a966faa0.jpg"
+  <img
+  src={makkahCityImage}
   alt="Makkah"
 />
     </div>

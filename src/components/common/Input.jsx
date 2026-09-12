@@ -14,4 +14,4 @@ function Input({ label, placeholder, type = "text", ...props }) {
     );
 
 }
-export default Input
+export default Input;

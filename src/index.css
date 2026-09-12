@@ -777,6 +777,11 @@ code {
   object-fit: cover;
   border-radius: 18px;
 }
+.input-group input:focus {
+  outline: none;
+  border-color: #198754;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.15);
+}
 /* CTA Responsive */
 @media (max-width: 768px) {
   .cta-section {
@@ -832,4 +837,179 @@ code {
   .cta-image img {
     height: 190px;
   }
+}
+/* Login Page */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8faf9;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  margin: 0;
+  font-size: 36px;
+    color: #198754;
+}
+
+.auth-header p {
+  margin: 10px 0 0;
+  color: #667085;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #198754;
+}
+
+.form-header p {
+  margin: 0;
+  color: #667085;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #198754;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.form-options a,
+.auth-switch a {
+ color: #198754;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  color: #667085;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px;
+  }
+
+  .auth-header h1 {
+    font-size: 30px;
+  }
+
+  .form-header h2 {
+    font-size: 24px;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+/* Ziyaarah green buttons */
+
+button[type="submit"] {
+  background: #198754 !important;
+  color: white !important;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #157347 !important;
+}
+
+/* Green input style */
+
+.input-group input {
+  background: white !important;
+  color: #344054 !important;
+  border: 1px solid #198754 !important;
+}
+
+.input-group input::placeholder {
+  color: #98a2b3;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #198754 !important;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.15);
+}
+
+/* Fix browser autofill */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #344054 !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  border: 1px solid #198754 !important;
+}
+.login-error {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #dc2626;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.form-options input[type="checkbox"] {
+  accent-color: #00c853;
+  background-color: white;
+}
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
