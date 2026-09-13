@@ -1,12 +1,13 @@
-
+import { registerUser } from "../../services/authService";
+import useAuthStore from "../../store/authStore";
 import  Input from "../common/Input";
 import Button from "../common/Button";
 import { useState } from "react";
 
 function Register() {
     const [error, setError] = useState("");
-
-    const handleSubmit = (e) => {
+const setAuth = useAuthStore((state) => state.setAuth);
+   const handleSubmit = async (e) => {
         e.preventDefault();
     
         const form = e.target;
@@ -15,7 +16,6 @@ function Register() {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-      
 
    
     if (!fullName || !email || !password || !confirmPassword) {
@@ -35,11 +35,26 @@ function Register() {
       setError("Passwords do not match.");
       return;
     }
-        setError("");
-        alert("Registration submitted!");
-  window.location.href = "/";
-};
 
+    try{
+
+    
+        setError("");
+         const data = await registerUser(email, password);
+         setAuth(data.token,{
+            fullName,
+            email,
+         });
+
+         
+
+        alert("Registration successful!");
+  window.location.href = "/";
+}
+catch (error) {
+      setError(error.message);
+    }
+};
     return (
         <div className="auth-page">
             <div className="auth-card">
@@ -62,29 +77,33 @@ function Register() {
             </p>
           )}
 
-                    <Input
-                        label="Full Name"
-                        placeholder="Enter your full name"
-                        type="text"
+                 <Input
+  label="Full Name"
+  name="fullName"
+  placeholder="Enter your full name"
+  type="text"
+/>
 
-                    />
-                    <Input
-                        label="Email"
-                        placeholder="Enter your email"
-                        type="email"
-                    />
-                 
-                    <Input
-            label="Password"
-            placeholder="Create a password"
-            type="password"
-          />
+<Input
+  label="Email"
+  name="email"
+  placeholder="Enter your email"
+  type="email"
+/>
 
-                    <Input
-                        label="Confirm Password"
-                        placeholder="Confirm your password"
-                        type="password"
-                    />
+<Input
+  label="Password"
+  name="password"
+  placeholder="Create a password"
+  type="password"
+/>
+
+<Input
+  label="Confirm Password"
+  name="confirmPassword"
+  placeholder="Confirm your password"
+  type="password"
+/>
                     <Button type="submit">
                     Create Account
                     </Button>

@@ -2,10 +2,14 @@ import Input from "../common/Input";
 import Button from "../common/Button";
 import { useState } from "react";
 
+import { loginUser } from "../../services/authService";
+import useAuthStore from "../../store/authStore";
+
 function Login() {
   const [error, setError] = useState("");
+ const setAuth = useAuthStore((state) => state.setAuth);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -16,9 +20,18 @@ function Login() {
       setError("Please enter your email and password");
       return;
     }
+    try{
+        setError("");
+        const data = await loginUser(email, password);
+        setAuth(data.token, {
+            email,
+        });
 
-    setError("");
-    alert("Login submitted!");
+        
+        window.location.href = "/";
+    } catch (error) {
+        setError(error.message);
+    }
   };
 
   return (
