@@ -10,8 +10,8 @@ export default function Navbar() {
 
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/about">About Us</Link>
-        <Link to="/prayers">Prayers</Link>
+       <a href="/about">About Us</a>
+       <a href="/prayers">Prayers</a>
         <Link to="/events">Events</Link>
         <Link to="/contact">Contact Us</Link>
       </div>

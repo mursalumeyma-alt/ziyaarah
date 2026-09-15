@@ -1,0 +1,130 @@
+.prayers-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #1f2937;
+  padding-bottom: 70px;
+}
+
+.prayers-hero {
+  text-align: center;
+  padding: 70px 25px 50px;
+  background: white;
+}
+
+.prayers-badge {
+  display: inline-block;
+  background: #e2f8ef;
+  color: #07875d;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.prayers-hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.prayers-hero h1 span {
+  color: #07875d;
+}
+
+.prayers-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.prayer-list {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.prayer-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: white;
+  padding: 18px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.prayer-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2f8ef;
+  border-radius: 10px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.prayer-card h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.prayer-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.prayer-card button {
+  margin-left: auto;
+  background: #0f9d68;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .prayers-hero h1 {
+    font-size: 40px;
+  }
+
+  .prayer-list {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prayers-hero h1 {
+    font-size: 32px;
+  }
+
+  .prayer-card {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .prayer-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .prayer-card h3 {
+    font-size: 16px;
+  }
+
+  .prayer-card button {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+}

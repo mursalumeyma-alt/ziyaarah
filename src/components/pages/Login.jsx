@@ -1,13 +1,40 @@
+import {useState} from "react";
 import Input from "../common/Input";
 import Button from "../common/Button";
+import { loginUser } from "../../services/authService";
+import useAuthStore from "../../store/authStore";
+
 
 
 function Login() {
-    const handleSubmit = (e) => {
+    const [error, setError] = useState("");
+    const setAuth = useAuthStore((state) => state.setAuth);
+
+    const handleSubmit =async (e) => {
         e.preventDefault();
-        alert("Login submitted!");
-        // Handle login logic here
-    };
+        const form =e.target;
+        const email = form.email.value.trim();
+        const password= form.password.value;
+
+        if (!email || !password){
+            setError("Please enter your email and password");
+            return;
+        }
+try{ 
+    setError("");
+    const data =await loginUser(email,password);
+
+    setAuth(data.token,{
+        email,
+    });
+    window.location.herf ="/dashboard";
+    }
+    catch (error){
+        setError(error.message);
+    }
+}
+      
+   
 
     return(
         <div className="auth-page">
@@ -25,14 +52,20 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                     <Input
                         label="Email"
+                        name="email"
                         placeholder="Enter your email"
                         type="email"
                     />
                     <Input
                         label="Password"
+                        name="password"
                         placeholder="Enter your password"
                         type="password"
                     />
+
+          {error && (
+            <p className="form-error">{error}</p>
+          )}
                 
                  <div className="form-options">
                     <label>

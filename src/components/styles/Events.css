@@ -1,0 +1,155 @@
+
+.events-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 70px;
+}
+
+.events-hero {
+  text-align: center;
+  background: white;
+  padding: 70px 25px 50px;
+}
+
+.events-badge {
+  display: inline-block;
+  background: #e2f8ef;
+  color: #07875d;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.events-hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: #1f2937;
+}
+
+.events-hero h1 span {
+  color: #07875d;
+}
+
+.events-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.events-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.event-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.event-date {
+  width: 70px;
+  height: 70px;
+  background: #e2f8ef;
+  color: #07875d;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.event-date strong {
+  font-size: 25px;
+}
+
+.event-date span {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.event-info p {
+  margin: 0 0 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.event-info span {
+  color: #07875d;
+  font-size: 13px;
+}
+
+.event-card button {
+  background: #0f9d68;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .events-hero h1 {
+    font-size: 40px;
+  }
+
+  .event-card {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-hero {
+    padding: 45px 16px 35px;
+  }
+
+  .events-hero h1 {
+    font-size: 32px;
+  }
+
+  .events-list {
+    padding: 25px 16px;
+  }
+
+  .event-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .event-date {
+    width: 60px;
+    height: 60px;
+  }
+
+  .event-info {
+    width: calc(100% - 80px);
+  }
+
+  .event-card button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
