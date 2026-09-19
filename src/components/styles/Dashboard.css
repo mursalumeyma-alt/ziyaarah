@@ -1,8 +1,205 @@
-.dashboard-layout {
+.card-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
 }
 
-.dashboard-content {
-  flex: 1;
-  padding: 20px;
+.dashboard-card:nth-child(1) .card-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+.dashboard-card:nth-child(2) .card-icon {
+  background: #f97316;
+  color: white;
+}
+
+.dashboard-card:nth-child(3) .card-icon {
+  background: #059669;
+  color: white;
+}
+
+.dashboard-card:nth-child(4) .card-icon {
+  background: #f59e0b;
+  color: white;
+}
+.journey-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.current-journey,
+.journey-stages {
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.progress-box {
+  margin: 20px 0;
+}
+
+.progress-box > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 50%;
+  height: 100%;
+  background: #2563eb;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stage-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.journey-section {
+  background: transparent !important;
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.current-journey,
+.journey-stages {
+  background: #fff !important;
+  color: #243044 !important;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.current-journey h2,
+.journey-stages h2,
+.current-journey h3,
+.journey-stages h3,
+.current-journey p,
+.journey-stages p {
+  color: #243044 !important;
+}
+.quick-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.quick-card {
+  padding: 28px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.quick-icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.quick-card h3 {
+  margin: 0 0 10px;
+}
+
+.quick-card p {
+  margin: 0;
+  color: #64748b;
+}
+
+@media (max-width: 900px) {
+  .quick-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.prayer-card {
+  background: #079669;
+  color: white;
+}
+
+.quran-card {
+  background: #ff8a00;
+  color: white;
+}
+
+.community-card {
+  background: #4169e1;
+  color: white;
+}
+
+.prayer-card p,
+.quran-card p,
+.community-card p {
+  color: white;
+}
+.quick-card.prayer-card {
+  background: #079669 !important;
+  color: white;
+}
+
+.quick-card.quran-card {
+  background: #ff8a00 !important;
+  color: white;
+}
+
+.quick-card.community-card {
+  background: #4169e1 !important;
+  color: white;
+}
+
+.quick-card.prayer-card p,
+.quick-card.quran-card p,
+.quick-card.community-card p {
+  color: white;
 }

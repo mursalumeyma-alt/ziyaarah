@@ -8,6 +8,10 @@ import AboutUs from "../pages/AboutUs";
 import Prayers from "../pages/Prayers";
 import Events from "../pages/Events";
 import Contact from "../pages/Contact";
+import Trips from "../pages/Trips";
+import Resources from "../pages/Resources";
+import RitualTracker from "../pages/RitualTracker";
+import TripPlanner from "../pages/TripPlanner";
 export default function AppRoutes() {
   return (
     <Routes>
@@ -20,6 +24,11 @@ export default function AppRoutes() {
     <Route path="/prayers" element={<Prayers />} />
     <Route path="/events" element={<Events />} />
     
-    <Route path="/contact" element={<Contact />} /></Routes>
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/trips" element={<Trips />} />
+         <Route path="/resources" element={<Resources />} />
+         <Route path="/ritual-tracker" element={<RitualTracker />} />
+         <Route path="/trip-planner" element={<TripPlanner />} />
+    </Routes>
   );
 }

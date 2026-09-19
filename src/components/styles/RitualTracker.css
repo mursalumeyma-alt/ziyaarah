@@ -1,0 +1,541 @@
+* {
+  box-sizing: border-box;
+}
+
+.ritual-page {
+  min-height: 100vh;
+  background: #f5f7f9;
+  color: #202938;
+}
+
+.ritual-dashboard {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.ritual-sidebar {
+  width: 245px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid #e7ebef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ritual-brand {
+  height: 70px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #effaf7;
+  border-bottom: 1px solid #e1f1ed;
+}
+
+.brand-mark {
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  background: #129b78;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ritual-brand strong {
+  display: block;
+  color: #182234;
+  font-size: 13px;
+}
+
+.ritual-brand span {
+  display: block;
+  margin-top: 2px;
+  color: #6d7a88;
+  font-size: 8px;
+}
+
+.ritual-nav {
+  padding: 12px 10px;
+}
+
+.ritual-nav a {
+  height: 38px;
+  margin-bottom: 3px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 7px;
+  color: #354052;
+  text-decoration: none;
+  font-size: 11px;
+  transition: 0.2s ease;
+}
+
+.ritual-nav a span {
+  width: 14px;
+  text-align: center;
+  color: #687482;
+}
+
+.ritual-nav a:hover {
+  background: #f1f5f4;
+}
+
+.ritual-nav a.active {
+  background: #129b78;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ritual-nav a.active span {
+  color: #ffffff;
+}
+
+.ritual-sidebar-bottom {
+  border-top: 1px solid #e8ebef;
+}
+
+.profile {
+  padding: 13px 14px;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #129b78;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.profile strong {
+  display: block;
+  color: #273242;
+  font-size: 10px;
+}
+
+.profile span {
+  display: block;
+  margin-top: 2px;
+  color: #7a8490;
+  font-size: 8px;
+}
+
+.logout-button {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-top: 1px solid #edf0f2;
+  background: #ffffff;
+  color: #505b68;
+  text-align: left;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.logout-button span {
+  margin-right: 8px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.ritual-content {
+  flex: 1;
+  min-width: 0;
+  padding: 18px 22px 30px;
+  overflow-y: auto;
+}
+
+.ritual-header h1 {
+  margin: 0;
+  color: #202938;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.ritual-header p {
+  margin: 5px 0 15px;
+  color: #64707e;
+  font-size: 10px;
+}
+
+/* =========================
+   TRIP BANNER
+========================= */
+
+.trip-banner {
+  padding: 17px 17px;
+  margin-bottom: 17px;
+  border-radius: 9px;
+  background: #111a2b;
+  color: #ffffff;
+}
+
+.trip-banner h2 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.trip-banner p {
+  margin: 5px 0 0;
+  color: #b8c0cb;
+  font-size: 10px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.ritual-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ritual-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ritual-filters label span {
+  color: #55606d;
+  font-size: 9px;
+}
+
+.ritual-filters select {
+  width: 100%;
+  height: 29px;
+  padding: 0 9px;
+  border: 1px solid #dfe4e9;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #303b49;
+  font-size: 9px;
+  outline: none;
+}
+
+/* =========================
+   STAGE CARDS
+========================= */
+
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stage-card {
+  overflow: hidden;
+  border: 1px solid #e5e9ed;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(20, 35, 50, 0.03);
+}
+
+.stage-header {
+  padding: 17px 17px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.stage-title {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.stage-circle {
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  border: 1.5px solid #aeb7c1;
+  border-radius: 50%;
+}
+
+.stage-title h2 {
+  margin: 0;
+  color: #283343;
+  font-size: 12px;
+}
+
+.stage-title p {
+  margin: 4px 0 0;
+  color: #65707c;
+  font-size: 9px;
+}
+
+.stage-header > strong {
+  flex-shrink: 0;
+  color: #313b49;
+  font-size: 9px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-area {
+  padding: 0 17px 17px;
+}
+
+.progress-area > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #64707c;
+  font-size: 9px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e5e9ee;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: #4386e8;
+  transition: width 0.25s ease;
+}
+
+/* =========================
+   TASK LIST
+========================= */
+
+.task-list {
+  padding: 15px 17px;
+  border-top: 1px solid #edf0f2;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.task {
+  width: 100%;
+  min-height: 34px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e9ed;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #303b48;
+  text-align: left;
+  cursor: pointer;
+}
+
+.task:hover {
+  border-color: #cbd3da;
+}
+
+.task.completed {
+  background: #ecfbf3;
+  border-color: #d2f1df;
+}
+
+.task-check {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  border: 1px solid #aeb7c0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #16a276;
+  font-size: 7px;
+}
+
+.task-check.checked {
+  border-color: #35c58c;
+  background: #ffffff;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.task.completed .task-title {
+  color: #61716a;
+  text-decoration: line-through;
+}
+
+.task-type {
+  padding: 3px 7px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.task-mandatory {
+  background: #fff1f1;
+  color: #d94a50;
+}
+
+.task-sunnah {
+  background: #f0f6ff;
+  color: #4275bf;
+}
+
+.task-preparation {
+  background: #edfaf4;
+  color: #34a976;
+}
+
+/* =========================
+   LEGEND
+========================= */
+
+.ritual-legend {
+  margin-top: 16px;
+  padding: 17px;
+  border: 1px solid #e5e9ed;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.ritual-legend h2 {
+  margin: 0 0 15px;
+  color: #293443;
+  font-size: 11px;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.legend-items > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.legend-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.legend-icon.mandatory {
+  color: #d8343c;
+}
+
+.legend-icon.sunnah {
+  color: #4380d2;
+}
+
+.legend-icon.preparation {
+  color: #35a979;
+}
+
+.legend-items strong {
+  display: block;
+  color: #384352;
+  font-size: 9px;
+}
+
+.legend-items p {
+  margin: 3px 0 0;
+  color: #7c8692;
+  font-size: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .ritual-sidebar {
+    width: 200px;
+  }
+
+  .ritual-content {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ritual-dashboard {
+    flex-direction: column;
+  }
+
+  .ritual-sidebar {
+    width: 100%;
+  }
+
+  .ritual-brand {
+    height: 58px;
+  }
+
+  .ritual-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .ritual-nav a {
+    margin: 0;
+  }
+
+  .ritual-sidebar-bottom {
+    display: none;
+  }
+
+  .ritual-content {
+    padding: 16px;
+  }
+
+  .ritual-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .legend-items {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-header {
+    flex-direction: column;
+  }
+
+  .stage-header > strong {
+    margin-left: 20px;
+  }
+
+  .task {
+    align-items: flex-start;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .task-type {
+    margin-left: auto;
+  }
+}
