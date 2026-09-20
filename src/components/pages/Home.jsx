@@ -1,15 +1,16 @@
-import makkahImage from "../../assets/makkah.png";
-import makkahCityImage from "../../assets/makkah-city.png";
-import { Link } from "react-router-dom";
+import Navbar from "../layout/Navbar";
+import "../styles/Home.css";
 export default function Home() {
   return (
-    <main className="home-page">
+        <> 
+        <Navbar/>
+        
+  <main className="home-page">
       {/* Hero section*/  }
       <section className="hero">
         <div className="hero-content">
           <span className="hero-badge">
              ✦ Trusted by 10,000+ Pilgrims
-
           </span>
 
           <h1> 
@@ -21,41 +22,34 @@ export default function Home() {
             Ziyaarah brings your spiritual preparation, journey planning,
             and essential resources together in one place.</p>
         <div className="hero-buttons">
-         <button
-  className="btn btn-primary"
+         <button className="btn btn-primary"
   onClick={() => alert("Welcome to the Ziyaarah community!")}
 >
   Join Our Community
-</button>
-
+      </button>
+      
           <button className="btn btn-secondary"> Watch Demo</button>
         </div>
         </div>
-
         <div className="hero-image">
-        <img src={makkahImage} alt="Kaaba in Makkah" />
+        <img src="/images/makkah.png"/>
+
         {/* Journey Complete card */}
         <div className="journey-card">
             <span>✓</span>
-
-          
-<div>
+         <div>
           <strong>Journey Complete</strong>
           <small>Your trip progress</small>
           </div>
           </div>
-        
          {/* Sacred Journey card */}
         <div className="sacred-card">
           <span>✦</span>
-        
         <div>
         <strong>Sacred Journey</strong>
         <small>Plan with confidence</small>
-      
       </div>
       </div>
-      
   </div>
       
       </section>
@@ -96,8 +90,8 @@ export default function Home() {
         inspiration.</p>
             </div>
           </div>
-      
       </section>
+
       {/* Journey Section */}
       <section className="journey-section">
         <div className="journey-header">
@@ -109,11 +103,7 @@ export default function Home() {
           <button className="journy-arrow">‹</button>
           
           <div className="journey-option">
-          <img
-  src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/NMH46HRRMRKDJJKVNBABBLFE7Q.jpg"
-  alt="Hajj Pilgrimage"
-/>
-
+          <img src="/images/hajj.jpg" />
             <div className="journey-info">
               <h3>Hajj Pilgrimage</h3>
               <p>The greater pilgrimage - a once-in-a-lifetime spiritual journey.</p>
@@ -122,42 +112,62 @@ export default function Home() {
           </div>
 
           <div className="journey-option">
-           <img
-  src="https://th.bing.com/th/id/OIP.hTHQji3nrY86vlPAUFE50wHaEK?w=474&h=266&r=0&pid=CanonicalCanvas"
-  alt="Umrah Pilgrimage"
-/>
-
+           <img src="/images/umrahimages.jpg" />
             <div className="journey-info">
               <h3>Umrah Pilgrimage</h3>
               <p>The lesser pilgrimage - can be performed any time of year.</p>
               <small>◷5-7 days flexible planning</small>
             </div>
-            
-
           </div>
-          <button className="journy-arrow">›</button>
-        </div>
+          </div>
       </section>
-{/* CTA Section */}
-<section className="cta-section">
+
+{/* CTA BANNER  */}
+<section className="cta-banner">
   <div className="cta-content">
-  <div className="cta-text">
-      <h2>Ready to Begin Your Spiritual Journey?</h2>
-      <p>Join thousands of Muslims who have prepared for their sacred
-        journey with Ziyaarah. Start planning your Hajj or Umrah today
+     <div className="cta-text">
+     <h2>Ready to Begin Your Spiritual Journey?</h2>
+   <p> join thousands of Muslims who have prepared for their sacred
+         journey with Ziyaarah. Start planning your Hajj or Umrah today
         with our comprehensive tools and guidance.</p>
-       <Link to="/register" className="cta-button">
-  Create Your Account →
-</Link>
-    </div>
-    <div className="cta-image">
-  <img
-  src={makkahCityImage}
-  alt="Makkah"
-/>
-    </div>
+    <button className="cta-btn">
+ Create Your Account
+    </button>
+  </div>
+  </div>
+  <div className="cta-image">
+   <img src="/images/madinah.jpg" alt="Madinah" />
   </div>
 </section>
-    </main>
-  );
+
+ { /* Quick links */ }
+ <section className="quick-links">
+  <h2> Quick Links</h2>
+  <div className="Quick-links">
+    <h2> Quick links </h2>
+    <div className="links-grid">
+       <a href="#">Prayer Times</a>
+    <a href="#">Quran Study</a>
+    <a href="#">Community</a>
+    <a href="#">Events</a>
+    </div>
+  </div>
+ </section>
+
+ { /* footer */}
+ <footer className="footer">
+  <div className="footer-logo" >
+    <h3>🕌 Ziyaarah </h3>
+    <div className="footer-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>© 2026 Ziyaarah. All rights reserved.</p>
+  </div>
+ </footer>
+ </main>
+ </>
+ );
 }
