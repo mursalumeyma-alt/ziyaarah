@@ -1,62 +1,60 @@
-
-import {useState} from "react";
-import  Input from "../common/Input";
-import Button from "../common/Button";
 import { registerUser } from "../../services/authService";
 import useAuthStore from "../../store/authStore";
+import  Input from "../common/Input";
+import Button from "../common/Button";
+import { useState } from "react";
 
 function Register() {
-    const[error,setError]= useState("");
-    const setAuth =useAuthStore((state)=> state.setAuth);
-  
+    const [error, setError] = useState("");
+const setAuth = useAuthStore((state) => state.setAuth);
+   const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const form = e.target;
+        const fullName = form.fullName.value.trim();
+        const email = form.email.value.trim();
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+
+
    
+    if (!fullName || !email || !password || !confirmPassword) {
+      setError("Please fill in all fields.");
+      return;
+    }
+ if (!email.includes("@")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      return;
+    }
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  const from = e.target;
-  console.log(from);
-  const fullName =from.fullName.value.trim();
-  const email= from.email.value.trim();
-  const password = from.password.value;
-  const confirmPassword = from.confirmPassword.value;
-  /*
-  if (fullName|| !email ||!password || !confirmPassword) {
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
 
-    setError("Please fill in all fields.");
-    return;
-  }
+    try{
 
-if (!email.includes ("@")) {
-    setError("Please enter a valid email address.");
-    return;
-  }
-  if (password.length < 6) {
-    setError("Password must be at least 6 characters long.");
-    return;
-  }
-  if (password !== confirmPassword) {
-    setError("Passwords do not match.");
-    return;
-  }
-    */
-  try {
-   console.log(fullName, email, password);
-    const data = await registerUser(fullName, email, password);
-    console.log(data);
-    setAuth(data.token, {
-        fullName,
-        email
-    });
+    
+        setError("");
+         const data = await registerUser(email, password);
+         setAuth(data.token,{
+            fullName,
+            email,
+         });
 
-    alert("Registration successful!");
-    window.location.href = "/dashboard";
-  } catch (error) {
-    setError(error.message);
-  }
+         
+
+        alert("Registration successful!");
+  window.location.href = "/";
+}
+catch (error) {
+      setError(error.message);
+    }
 };
-
-   
-
     return (
         <div className="auth-page">
             <div className="auth-card">
@@ -73,37 +71,39 @@ if (!email.includes ("@")) {
 
 
                 <form onSubmit={handleSubmit}>
-                    <Input
-                        label="Full Name"
-                        name="fullName"
-                        placeholder="Enter your full name"
-                        type="text"
+                      {error && (
+            <p className="login-error">
+              {error}
+            </p>
+          )}
 
-                    />
-                    <Input
-                        label="Email"
-                        name="email"
-                        placeholder="Enter your email"
-                        type="email"
-                    />
-                 
-                    <Input
-            label="Password"
-            name="password"
-            placeholder="Create a password"
-            type="password"
-          />
+                 <Input
+  label="Full Name"
+  name="fullName"
+  placeholder="Enter your full name"
+  type="text"
+/>
 
-                    <Input
-                        label="Confirm Password"
-                        name="confirmPassword"
-                        placeholder="Confirm your password"
-                        type="password"
-                    />
+<Input
+  label="Email"
+  name="email"
+  placeholder="Enter your email"
+  type="email"
+/>
 
+<Input
+  label="Password"
+  name="password"
+  placeholder="Create a password"
+  type="password"
+/>
 
-          {error && <p className="form-error">{error}</p>}
-
+<Input
+  label="Confirm Password"
+  name="confirmPassword"
+  placeholder="Confirm your password"
+  type="password"
+/>
                     <Button type="submit">
                     Create Account
                     </Button>
